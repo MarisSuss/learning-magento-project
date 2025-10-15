@@ -1,0 +1,17 @@
+# Normalize line endings for text files
+* text=auto eol=lf
+
+# Treat images and binaries as binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.phar binary
+
+# Linguist: classify vendored code
+vendor/** linguist-vendored
+lib/** linguist-vendored

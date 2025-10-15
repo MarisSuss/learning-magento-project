@@ -1,0 +1,41 @@
+# Magento 2
+# Sensitive and environment-specific
+app/etc/env.php
+auth.json
+
+# Generated content and caches
+generated/
+!generated/.htaccess
+var/
+!var/.htaccess
+pub/static/
+!pub/static/.htaccess
+pub/media/
+
+# Composer vendor (install on deploy)
+vendor/
+composer.phar
+
+# Node/JS artifacts
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# IDE/editor
+.idea/
+.vscode/
+*.iml
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Tooling caches
+.php_cs.cache
+.phpunit.result.cache
+coverage/
+.cache/
+
+
