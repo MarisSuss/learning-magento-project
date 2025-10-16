@@ -16,6 +16,12 @@
                <field id="banner_text" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                    <label>Top Banner text</label>
                </field>
+
+               <field id="banner_color" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Banner Background Color</label>
+                <backend_model>MagebitAcademy\TopBanner\Model\Config\Backend\Color</backend_model>
+                <comment>Enter a valid hex color code (e.g. #FF0000)</comment>
+             </field>
            </group>
        </section>
    </system>
