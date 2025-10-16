@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+   <preference for="Magento\Framework\View\Element\Template" type="MagebitAcademy\TopBanner\Block\TopBanner" />
+   <type name="MagebitAcademy\TopBanner\Block\TopBanner">
+       <arguments>
+           <argument name="additionalString" xsi:type="string">🚚</argument>
+       </arguments>
+   </type>
+   <virtualType name="MagebitAcademy\TopBanner\Block\TopBannerVirtual" type="MagebitAcademy\TopBanner\Block\TopBanner">
+       <arguments>
+           <argument name="additionalString" xsi:type="string">🚀</argument>
+       </arguments>
+   </virtualType>
+   <preference for="MagebitAcademy\TopBanner\Block\TopBanner" type="MagebitAcademy\TopBanner\Block\TopBannerVirtual"/>
+</config>
