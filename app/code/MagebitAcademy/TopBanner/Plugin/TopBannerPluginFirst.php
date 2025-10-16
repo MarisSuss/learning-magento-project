@@ -52,4 +52,27 @@ class TopBannerPluginFirst
         $this->logger->info('PLUGIN: SO-1 afterGetDummy execution');
         return $result . ', SO-1 after plugin executed';
     }
+
+     /**
+    * Around plugin for getDummy method
+    *
+    * This method wraps the original getDummy() method and can control its execution.
+    *
+    * @param TopBanner $subject
+    * @param callable $proceed
+    * @param string $dummyText
+    * @return string
+    */
+   public function aroundGetDummy(TopBanner $subject, callable $proceed, string $dummyText): string
+   {
+       $this->logger->info('PLUGIN: SO-1 aroundGetDummy execution - before proceed');
+       $dummyText .= ', SO-1 around plugin before proceed';
+
+
+       $result = $proceed($dummyText);
+
+
+       $this->logger->info('PLUGIN: SO-1 aroundGetDummy execution - after proceed');
+       return $result . ', SO-1 around plugin after proceed';
+   }
 }
