@@ -37,4 +37,19 @@ class TopBannerPluginFirst
         $dummyText .= ', SO-1 before plugin executed';
         return [$dummyText];
     }
+
+    /**
+     * After plugin for getDummy method
+     *
+     * This method executes after the original getDummy() method.
+     *
+     * @param TopBanner $subject
+     * @param string $result
+     * @return string
+     */
+    public function afterGetDummy(TopBanner $subject, string $result): string
+    {
+        $this->logger->info('PLUGIN: SO-1 afterGetDummy execution');
+        return $result . ', SO-1 after plugin executed';
+    }
 }
