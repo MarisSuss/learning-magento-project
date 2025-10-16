@@ -10,7 +10,7 @@
                sortOrder="1" />
         <plugin name="top_banner_plugin_second"
                 type="MagebitAcademy\TopBanner\Plugin\TopBannerPluginSecond"
-                sortOrder="100" />
+                sortOrder="100" disabled="true"/>
    </type>
    <virtualType name="MagebitAcademy\TopBanner\Block\TopBannerVirtual" type="MagebitAcademy\TopBanner\Block\TopBanner">
        <arguments>
