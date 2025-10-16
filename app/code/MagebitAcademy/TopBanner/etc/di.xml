@@ -5,6 +5,9 @@
        <arguments>
            <argument name="additionalString" xsi:type="string">🚚</argument>
        </arguments>
+       <plugin name="top_banner_plugin_first"
+               type="MagebitAcademy\TopBanner\Plugin\TopBannerPluginFirst"
+               sortOrder="1" />
    </type>
    <virtualType name="MagebitAcademy\TopBanner\Block\TopBannerVirtual" type="MagebitAcademy\TopBanner\Block\TopBanner">
        <arguments>

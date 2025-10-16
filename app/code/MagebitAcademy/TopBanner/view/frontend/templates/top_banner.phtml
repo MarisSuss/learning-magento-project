@@ -8,9 +8,12 @@
 /** @var \MagebitAcademy\TopBanner\Block\TopBanner $block */
 $bannerText = $block->getBannerText();
 $bannerColor = $block->getBannerColor();
+$bannerDummy = $block->getDummy('Initial text');
 ?>
 <?php if ($bannerText && $bannerColor): ?>
    <div class="top-banner" style="background-color: <?= $block->escapeHtmlAttr($bannerColor) ?>; height: 64px; display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 16px; font-weight: 500;">
        <?= $block->escapeHtml($bannerText) ?>
+       <br>
+       <?= $block->escapeHtml($bannerDummy) ?>
    </div>
 <?php endif; ?>

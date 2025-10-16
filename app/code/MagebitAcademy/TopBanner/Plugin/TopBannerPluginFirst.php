@@ -1,0 +1,40 @@
+<?php
+/**
+ * @copyright Copyright (c) 2025 Magebit, Ltd. (https://magebit.com/)
+ * @author    Magebit <info@magebit.com>
+ * @license   MIT
+ */
+
+declare(strict_types=1);
+
+namespace MagebitAcademy\TopBanner\Plugin;
+
+use MagebitAcademy\TopBanner\Block\TopBanner;
+use Psr\Log\LoggerInterface;
+
+class TopBannerPluginFirst
+{
+    /**
+     * @param LoggerInterface $logger
+     */
+    public function __construct(
+        private readonly LoggerInterface $logger
+    ) {
+    }
+
+    /**
+     * Before plugin for getDummy method
+     *
+     * This method executes before the original getDummy() method.
+     *
+     * @param TopBanner $subject
+     * @param string $dummyText
+     * @return array
+     */
+    public function beforeGetDummy(TopBanner $subject, string $dummyText): array
+    {
+        $this->logger->info('PLUGIN: SO-1 beforeGetDummy execution');
+        $dummyText .= ', SO-1 before plugin executed';
+        return [$dummyText];
+    }
+}

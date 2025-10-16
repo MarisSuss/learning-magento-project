@@ -11,6 +11,7 @@ namespace MagebitAcademy\TopBanner\Block;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
+use Psr\Log\LoggerInterface;
 
 class TopBanner extends Template
 {
@@ -20,12 +21,14 @@ class TopBanner extends Template
     /**
      * @param Context $context
      * @param ScopeConfigInterface $scopeConfig
+     * @param LoggerInterface $logger
      * @param string $additionalString
      * @param array $data
      */
     public function __construct(
         Context $context,
         private readonly ScopeConfigInterface $scopeConfig,
+        private readonly LoggerInterface $logger,
         private readonly string $additionalString = '',
         array $data = []
     ) {
@@ -56,5 +59,17 @@ class TopBanner extends Template
             self::CONFIG_PATH_BANNER_COLOR,
             \Magento\Store\Model\ScopeInterface::SCOPE_STORE
         );
+    }
+
+    /**
+     * Get dummy text
+     *
+     * @param string $dummyText
+     * @return string
+     */
+    public function getDummy(string $dummyText): string
+    {
+        $this->logger->info('getDummy execution');
+        return $dummyText . ', target function executed';
     }
 }
